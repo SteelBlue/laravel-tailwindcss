@@ -10,8 +10,6 @@
     <a href="https://github.com/tailwindcss/tailwindcss/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/tailwindcss.svg" alt="License"></a>
 </p>
 
-------
-
 ## Documentation
 
 For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
