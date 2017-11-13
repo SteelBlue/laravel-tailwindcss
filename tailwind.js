@@ -24,7 +24,7 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-var defaultConfig = require('tailwindcss').defaultConfig()
+// var defaultConfig = require('tailwindcss').defaultConfig()
 
 
 /*
@@ -127,6 +127,14 @@ var colors = {
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
+
+  get ['brand-darkest']() { return this['orange-darkest']; },
+  get ['brand-darker']() { return this['orange-darker']; },
+  get ['brand-dark']() { return this['orange-dark']; },
+  get ['brand']() { return this['orange']; },
+  get ['brand-light']() { return this['orange-light']; },
+  get ['brand-lighter']() { return this['orange-lighter']; },
+  get ['brand-lightest']() { return this['orange-lightest']; },
 }
 
 module.exports = {
@@ -149,10 +157,10 @@ module.exports = {
 
   /*
   |-----------------------------------------------------------------------------
-  | Screens                      https://tailwindcss.com/docs/responsive-design
+  | Screens                     https://tailwindcss.com//docs/responsive-design
   |-----------------------------------------------------------------------------
   |
-  | Screens in Tailwind are translated to CSS media queries. They define the
+  | Screens in Tailwind are essentially CSS media queries. They define the
   | responsive breakpoints for your project. By default Tailwind takes a
   | "mobile first" approach, where each screen size represents a minimum
   | viewport width. Feel free to have as few or as many screens as you
@@ -161,8 +169,6 @@ module.exports = {
   | Tailwind also allows for more complex screen definitions, which can be
   | useful in certain situations. Be sure to see the full responsive
   | documentation for a complete list of options.
-  |
-  | Class name: .{screen}:{utility}
   |
   */
 
@@ -204,7 +210,6 @@ module.exports = {
       'Fira Sans',
       'Droid Sans',
       'Helvetica Neue',
-      'sans-serif',
     ],
     'serif': [
       'Constantia',
@@ -258,6 +263,8 @@ module.exports = {
     '3xl': '1.875rem',  // 30px
     '4xl': '2.25rem',   // 36px
     '5xl': '3rem',      // 48px
+    '6xl': '4rem',      // 64px
+    '7xl': '5.25rem',   // 84px
   },
 
 
@@ -366,7 +373,7 @@ module.exports = {
   |
   | Here is where you define your border widths. Take note that border
   | widths require a special "default" value set as well. This is the
-  | width that will be used when you do not specify a border width.
+  | width that will be used when you do not specify a border color.
   |
   | Class name: .border{-side?}{-width?}
   |
@@ -406,11 +413,11 @@ module.exports = {
   | Border radius                    https://tailwindcss.com/docs/border-radius
   |-----------------------------------------------------------------------------
   |
-  | Here is where you define your border radius values. If a `default` radius
-  | is provided, it will be made available as the non-suffixed `.rounded`
-  | utility.
+  | Here is where you define your border radius values. Take note that
+  | a default radius is required. This is the value used for the
+  | non-suffixed version of this utility (.rounded).
   |
-  | Class name: .rounded{-radius?}
+  | Class name: .rounded-{radius?}
   |
   */
 
@@ -612,7 +619,7 @@ module.exports = {
   | common use-cases like "1px". You can, of course, modify these
   | values as needed.
   |
-  | Class name: .p{side?}-{size}
+  | Class name: .p{-side?}-{size}
   |
   */
 
@@ -639,7 +646,7 @@ module.exports = {
   | common use-cases like "1px". You can, of course, modify these
   | values as needed.
   |
-  | Class name: .m{side?}-{size}
+  | Class name: .m{-side?}-{size}
   |
   */
 
@@ -666,7 +673,7 @@ module.exports = {
   | generally get used together. You can, of course, modify these
   | values as needed.
   |
-  | Class name: .-m{side?}-{size}
+  | Class name: .-m{-side?}-{size}
   |
   */
 
@@ -691,8 +698,8 @@ module.exports = {
   | the defaults we provide, it's possible to apply multiple shadows
   | per utility using comma separation.
   |
-  | If a `default` shadow is provided, it will be made available as the non-
-  | suffixed `.shadow` utility.
+  | Take note that a default shadow is required. This is the value used
+  | for the non-suffixed version of this utility (.shadow).
   |
   | Class name: .shadow-{size?}
   |
@@ -721,13 +728,13 @@ module.exports = {
   */
 
   zIndex: {
-    'auto': 'auto',
     '0': 0,
     '10': 10,
     '20': 20,
     '30': 30,
     '40': 40,
     '50': 50,
+    'auto': 'auto',
   },
 
 
